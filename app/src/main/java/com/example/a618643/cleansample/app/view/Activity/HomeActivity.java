@@ -1,6 +1,6 @@
-package com.example.a618643.cleansample.View.Activity;
+package com.example.a618643.cleansample.app.view.Activity;
 
-import com.example.a618643.cleansample.Navigation.Navigator;
+import com.example.a618643.cleansample.app.navigation.Navigator;
 import com.example.a618643.cleansample.R;
 
 import android.os.Bundle;
@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        navigator = new Navigator(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }

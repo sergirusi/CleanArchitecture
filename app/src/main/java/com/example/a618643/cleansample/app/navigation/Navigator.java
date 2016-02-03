@@ -1,6 +1,5 @@
-package com.example.a618643.cleansample.Navigation;
+package com.example.a618643.cleansample.app.navigation;
 
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 

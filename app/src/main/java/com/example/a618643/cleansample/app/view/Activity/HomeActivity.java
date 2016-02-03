@@ -1,23 +1,36 @@
-package com.example.a618643.cleansample.View.Activity;
+package com.example.a618643.cleansample.app.view.Activity;
 
+import com.example.a618643.cleansample.app.navigation.Navigator;
 import com.example.a618643.cleansample.R;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+
 
 public class HomeActivity extends AppCompatActivity {
+
+    @Bind(R.id.buttonPOI) Button button_POI;
+
+    Toolbar toolbar;
+
+    private Navigator navigator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+        navigator = new Navigator(this);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
@@ -41,5 +54,10 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @OnClick(R.id.buttonPOI)
+    public void showPOIs() {
+        navigator.PoiNavigate(this, PoiListActivity.class);
     }
 }
